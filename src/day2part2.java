@@ -6,11 +6,12 @@ import java.util.HashSet;
 
 public class day2part2 {
     public static void main(String[] args) throws Exception {
+        long start = System.currentTimeMillis();
         FileReader reader = new FileReader("./inputday2");
         BufferedReader breeder = new BufferedReader(reader); // keepo
         String[] input = breeder.readLine().split(",");
 
-        HashSet<Long> set = new HashSet<Long>();
+        ArrayList<Long> list = new ArrayList<Long>();
         long finaldestination = 0;
 
         for(long i = 0; i<100000; i++){
@@ -18,12 +19,14 @@ public class day2part2 {
             String atemp = a;
             while(atemp.concat(a).length() <= 10){
             atemp = atemp.concat(a);
-            set.add(Long.parseLong(atemp));
+            int key = BinarySearchLeft(list, Long.parseLong(atemp));
+            if(list.size() == 0 || key ==  list.size() || key < list.size() && list.get(key) != Long.parseLong(atemp)){
+            list.add(key, Long.parseLong(atemp));
+            }
             }
         }
 
-        ArrayList<Long> list = new ArrayList<Long>(set);
-        Collections.sort(list);
+
 
         for(String range: input){
             String[] bounds = range.split("-");
@@ -38,6 +41,7 @@ public class day2part2 {
             }
         }
         System.out.println(finaldestination);
+        System.out.println(System.currentTimeMillis() - start);
 }
     public static int BinarySearchLeft(ArrayList<Long> array, long key) {
         int lo = 0;
