@@ -1,8 +1,6 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
 
 public class day2part2 {
     public static void main(String[] args) throws Exception {
@@ -21,7 +19,7 @@ public class day2part2 {
             atemp = atemp.concat(a);
             int key = BinarySearchLeft(list, Long.parseLong(atemp));
             if(list.size() == 0 || key ==  list.size() || key < list.size() && list.get(key) != Long.parseLong(atemp)){
-            list.add(key, Long.parseLong(atemp));
+            list.add(key, Long.parseLong(atemp)); // KMP é overrated.
             }
             }
         }
