@@ -11,32 +11,22 @@ public class day1part2 {
             String command = command1.toString();
             if(command.substring(0,1).equals("L")){
                 int subtract = Integer.parseInt(command.substring(1)); 
-                while(subtract>=100){
-                    x = Math.floorMod(x-100, 100);
-                    password++;
-                    subtract-=100;
+                for(int i = 0; i<subtract; i++){
+                    x = Math.floorMod(x-1, 100);
+                    if(x==0){
+                        password++;
+                    }
                 }
-                if(x == 0){
-                    System.out.println("a");
-                }
-                if(Math.floorMod(x-subtract, 100) > x || Math.floorMod(x-subtract, 100) == 0){
-                    password++;
-                }
-                x = Math.floorMod(x-subtract, 100);
+
             } else if(command.substring(0,1).equals("R")){
                 int add = Integer.parseInt(command.substring(1));
-                while(add>=100){
-                    x = Math.floorMod(x+100, 100);
-                    password++;
-                    add-=100;
+                    for(int i = 0; i<add; i++){
+                    x = Math.floorMod(x+1, 100);
+                    if(x==0){
+                        password++;
+                    }
                 }
-                if(x == 0){
-                    System.out.println("a");
-                }
-                if(Math.floorMod(x+add, 100) < x || Math.floorMod(x+add, 100) == 0){
-                    password++;
-                }
-        }
+            }
     }
         System.out.println(password);
 }
