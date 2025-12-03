@@ -11,13 +11,13 @@ public class day1part2 {
             String command = command1.toString();
             if(command.substring(0,1).equals("L")){
                 int subtract = Integer.parseInt(command.substring(1));
-                int xtemp = x; 
-                xtemp -= subtract;
-                if(xtemp < 0 && x % 100 != 0){
+                if(Integer.max(x, subtract) == subtract){
+                    subtract -= x;
+                    x = 0;
                     password++;
                 }
-                password += Math.abs(xtemp / 100);
-                x = xtemp;
+                x -= subtract;
+                password += Math.abs(x / 100);
                 x = Math.floorMod(x, 100);
 
             } else if(command.substring(0,1).equals("R")){
