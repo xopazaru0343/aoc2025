@@ -20,7 +20,7 @@ public class day1 {
                 password++;
             }
         }
-        System.out.println(password);
+        System.out.println(x);
     }
 }
 
