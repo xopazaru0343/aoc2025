@@ -20,7 +20,8 @@ public class day1 {
                 password++;
             }
         }
-        System.out.println(x);
+        breeder.close();
+        System.out.println(password);
     }
 }
 

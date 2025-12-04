@@ -27,7 +27,8 @@ public class day1part2 {
                     }
                 }
             }
-    }
+    }   
+        breeder.close();
         System.out.println(password);
 }
 }

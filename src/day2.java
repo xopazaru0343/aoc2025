@@ -27,6 +27,7 @@ public class day2 {
                 a++;
             }
         }
+        breeder.close();
         System.out.println(finaldestination);
 }
     public static int BinarySearchLeft(ArrayList<Long> array, long key) {

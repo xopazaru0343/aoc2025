@@ -38,6 +38,7 @@ public class day2part2 {
                 a++;
             }
         }
+        breeder.close();
         System.out.println(finaldestination);
         System.out.println(System.currentTimeMillis() - start);
 }

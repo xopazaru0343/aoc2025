@@ -34,6 +34,7 @@ public class day3 {
                     i--;
                 }   
             }
+            breeder.close();
             System.out.println(solv);
     }
 }

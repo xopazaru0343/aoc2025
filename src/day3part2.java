@@ -10,7 +10,6 @@ public class day3part2 {
             long solv = 0;
             for(Object tempLine: input){
                 String line = tempLine.toString();
-                boolean achado = false;
                 int index = 0; 
                 int i = 9;
                 StringBuffer sb = new StringBuffer();
@@ -30,6 +29,7 @@ public class day3part2 {
             }
             solv += Long.parseLong(sb.toString());
         }
+        breeder.close();
         System.out.println(solv);
         System.out.print(System.currentTimeMillis() - start);
     }
